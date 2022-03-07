@@ -1,22 +1,34 @@
 ﻿#include <iostream>
 
-#include "Generate_number.hpp"
+#include "Generate_number.h"
 
-#include "My_sort.hpp"
+#include "My_sort.h"
 using namespace My_sort;
 
 using namespace std;
 
-#define SIZE 1'000//'000
+#define SIZE 8
 
 int main()
 {
 	int* arr = new int[SIZE];
 
-	unique_gen(arr, 0, SIZE);
+	unique_gen(arr, 0, SIZE, 10000);
 
-	Sort::LSD_sort(arr, SIZE);
-
+	cout << endl;
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	
+	My_sort::Sort::LSD_sort(arr, SIZE);
+	
+	cout << endl;
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	
 	delete[] arr;
 
 	return 0;

@@ -3,7 +3,7 @@
 
 void generate(int* arr, const int begin, const int end)
 {
-	srand(time(NULL));
+	srand(time(nullptr));
 	for (int i(begin); i < end; i++)
 	{
 		arr[i] = rand();
